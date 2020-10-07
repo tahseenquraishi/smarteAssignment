@@ -1,0 +1,46 @@
+<div class="processing-queue-wrapper mt-70">
+
+  <div class="header">
+    <p class="header-text">Processing Queue</p>
+    <div class="clear-btn">
+     <p>View Suppression List History</p>
+    </div>
+  </div>
+
+  <div class="queue-element" *ngFor="let data of processingQueue">
+    <div class="date-row">
+      <p>{{data.date}}</p>
+    </div>
+    <div class="queue-header">
+      <p>{{data.name}}</p>
+    </div>
+
+    <div class="queue-detail-row">
+      <div class="queue-data-wrapper flex-2">
+         <p class="queue-data-header">Input Records</p>
+         <p class="queue-data">{{data.inputRecords}}</p>
+      </div>
+      <div class="queue-data-wrapper flex-2">
+          <p class="queue-data-header">Valid Records</p>
+          <p class="queue-data">{{data.validrecords}}</p>
+       </div>
+       <div class="queue-data-wrapper flex-2">
+          <p class="queue-data-header">Action</p>
+          <p class="queue-data">{{data.action}}</p>
+       </div>
+       <div class="queue-data-wrapper flex-2">
+          <p class="queue-data-header">By</p>
+          <p class="queue-data">{{data.by}}</p>
+       </div>
+       <div class="queue-data-wrapper flex-2">
+          <p class="queue-data-header">Lists</p>
+          <p class="queue-data">{{data.list}}</p>
+       </div>
+       <div class="queue-data-status flex-3 align-center">
+         <span class="progress-indicator"></span>
+         <p>{{data.status}}</p>
+       </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="header">
+   <div class="logo">
+     <img src="https://smarteinc.com/wp-content/uploads/2020/02/InfoGenie.png">
+   </div>
+   <div class="action">
+     <div class="inline-row">
+      <img src="assets/arrows.svg" width="24px">
+      <p>Manage</p>
+     </div>
+   </div>
+</div>
+<div class="body">
+  <div class="segment-buttons-group">
+      <div class="segment-button" [ngClass]="{'active': value === 'targetLists'}" (click)="value = 'targetLists'">
+        <img src="assets/aim.svg">
+        <p>Target Lists</p>
+      </div>
+      <div class="segment-button" [ngClass]="{'active': value === 'suppressionLists'}" (click)="value = 'suppressionLists'">
+          <img src="assets/user.svg">
+          <p>Suppression Lists</p>
+      </div>
+  </div>
+
+  <div class="segment-body">
+    <suppression-lists *ngIf="value === 'suppressionLists'"></suppression-lists>
+    <div class="target-lists" *ngIf="value === 'targetLists'"> <p>Target List Empty</p></div>
+    <processing-queue></processing-queue>
+  </div>
+</div>

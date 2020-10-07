@@ -1,0 +1,67 @@
+<div class="header">
+  <div class="detail">
+    <p class="header-text">Total Suppression Records:</p>
+    <div class="suppression-record-wrapper">
+     <img src="assets/group.svg">
+     <p class="suppression-record">15,500</p>
+    </div>
+  </div>
+
+  <div class="action">
+    <div class="search">
+      <input placeholder="Search">
+      <img src="assets/search.svg">
+    </div>
+
+    <div class="list-action-btn ml-20">
+      List Actions
+    </div>
+  </div>
+</div>
+
+<div class="table">
+  <div class="table-header">
+     <div class="flex-1 align-left">
+       <p>Sr No.</p>
+     </div>
+     <div class="flex-3 align-left">
+       <p>Suppression List name</p>
+     </div>
+     <div class="flex-3 align-left">
+        <p>Last Modified On</p>
+     </div>
+     <div class="flex-3 align-left">
+        <p>Last Modified By</p>
+     </div>
+     <div class="flex-3 align-center">
+        <p>Records</p>
+     </div>
+     <div class="flex-2 align-center">
+        <p>Actions</p>
+     </div>
+  </div>
+  <div class="table-row" *ngFor="let data of suppressionLists">
+      <div class="flex-1 align-left pl-10">
+          <p>{{data.srNo}}</p>
+        </div>
+        <div class="flex-3 align-left">
+          <p>{{data.name}}</p>
+        </div>
+        <div class="flex-3 align-left">
+           <p>{{data.lastModifiedOn}}</p>
+        </div>
+        <div class="flex-3 align-left">
+           <p>{{data.lastModifiedBy}}</p>
+        </div>
+        <div class="flex-3 align-center">
+           <p class="record-text">{{data.records}}</p>
+        </div>
+        <div class="flex-2">
+           <div class="action-row">
+              <img src="assets/email.svg">
+              <img src="assets/edit.svg">
+              <img src="assets/trash.svg">
+           </div>
+        </div>
+  </div>
+</div>
