@@ -14,8 +14,26 @@
     </div>
 
     <div class="list-action-btn ml-20">
-      List Actions
+      <div class="inline-row'" (click)="showDropdownList()">
+         <span> List Actions </span>
+         <span> <img src="assets/down-arrow.svg"> </span>
+      </div>
+      <div class="dropdown-list-area" *ngIf="showDropdown" (click)="hideDropdownList()">
+          <div class="dropdown-element">
+               <img src="assets/email.svg">
+               <span>Create Suppression List</span>
+          </div>
+          <div class="dropdown-element">
+               <img src="assets/edit.svg">
+               <span>Add Suppression List</span>
+          </div>
+          <div class="dropdown-element">
+               <img src="assets/trash.svg">
+               <span>Remove Suppression List</span>
+          </div>
+      </div>
     </div>
+   
   </div>
 </div>
 
@@ -40,7 +58,7 @@
         <p>Actions</p>
      </div>
   </div>
-  <div class="table-row" *ngFor="let data of suppressionLists">
+  <div class="table-row" *ngFor="let data of suppressionLists | slice:startIndex:lastIndex">
       <div class="flex-1 align-left pl-10">
           <p>{{data.srNo}}</p>
         </div>
@@ -64,4 +82,11 @@
            </div>
         </div>
   </div>
+</div>
+<div class="pagination-wrapper">
+   <span (click)="previous()"> << </span>
+   <span (click)="pagination(1)" [ngClass]="{'active': currentPage === 1}"> 1 </span>
+   <span (click)="pagination(2)" [ngClass]="{'active': currentPage === 2}"> 2 </span>
+   <span (click)="pagination(3)" [ngClass]="{'active': currentPage === 3}"> 3</span>
+   <span (click)="next()"> >> </span>
 </div>
